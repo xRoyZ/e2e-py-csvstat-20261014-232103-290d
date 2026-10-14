@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "csvstat"
+version = "0.1.0"
+description = "CLI für CSV-Spaltenstatistiken (Text- und JSON-Ausgabe)."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9,<10",
+    "ruff>=0.17,<0.18",
+]
+
+[project.scripts]
+csvstat = "csvstat.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
